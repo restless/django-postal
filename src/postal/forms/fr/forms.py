@@ -7,7 +7,8 @@ from postal.forms import PostalAddressForm
 
 class FRPostalAddressForm(PostalAddressForm):
     line1 = forms.CharField(label=_(u"Street"), max_length=100)
-    line2 = forms.CharField(label=_(u"Address Complement"), max_length=100)
+    line2 = forms.CharField(label=_(u"Address Complement"), required=False,
+                            max_length=100)
     city = forms.CharField(label=_(u"City"), max_length=100)
     code = FRZipCodeField(label=_(u"Zip code"))
 
